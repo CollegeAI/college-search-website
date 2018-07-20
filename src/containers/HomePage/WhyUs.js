@@ -37,8 +37,10 @@ const styles = theme => ({
     padding: '32px 16px'
   },
   reasonTitle: {
+    paddingTop: 20,
+    fontSize: 18,
     fontWeight: 'bold',
-    color: blue[200]
+    color: '#666'
   },
   icon: {
     fontSize: 128,
@@ -97,7 +99,7 @@ export class WhyUs extends React.PureComponent<Props> {
                   className={classes.reasonTitle}
                   gutterBottom
                 >
-                  Reviews From Real People
+                  200,000+ student data points.
                 </Typography>
                 <Typography
                   variant="body1"

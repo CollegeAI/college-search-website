@@ -64,8 +64,8 @@ export class RankingSection extends React.PureComponent<Props> {
                 className={classes.subheading}
                 gutterBottom
               >
-                College Search Website combines rigorous analysis with authentic
-                reviews to highlight the best places to go to school.
+                College Search Website analyzes all the best places to go to
+                school.
               </Typography>
             </div>
           </Grid>

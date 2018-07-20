@@ -27,6 +27,7 @@ import CollegeAutocomplete from '../../components/CollegeAutocomplete'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import logo from '../../components/Logo/logo.svg'
+import homepagePattern from '../../homepage_pattern.svg'
 
 import { actions } from './redux'
 import { actions as apiActions } from '../../api/redux'
@@ -65,9 +66,12 @@ const styles = theme => ({
   subheading: {
     maxWidth: 450,
     margin: '0px auto 24px',
+    color: '#fff',
     opacity: 1
   },
   collegeSearch: {
+    border: '1px solid #ccc',
+    borderRadius: 4,
     width: 450,
     margin: '0px auto'
   }
@@ -97,10 +101,12 @@ export class HomePage extends React.PureComponent<Props> {
                   position: 'absolute',
                   left: 0,
                   top: 0,
+                  right: 0,
+                  bottom: 0,
                   width: '100%',
                   height: '100%',
-                  backgroundImage: `url(${logo})`,
-                  backgroundRepeat: 'space',
+                  backgroundImage: `url(${homepagePattern})`,
+                  backgroundSize: '300px 150px',
                   opacity: 0.1,
                   zIndex: -1
                 }}
@@ -116,30 +122,32 @@ export class HomePage extends React.PureComponent<Props> {
                   zIndex: -2
                 }}
               />
-              <Typography
-                className={classes.heading}
-                variant="display3"
-                gutterBottom
+              <div
+                style={{
+                  backgroundColor: blue[400],
+                  display: 'inline-block',
+                  padding: 30,
+                  borderRadius: 4,
+                  boxShadow: '0px 2px 8px rgba(0,0,0,0.25)'
+                }}
               >
-                College Search Website
-              </Typography>
-
-              <Typography
-                className={classnames(classes.heading, classes.subheading)}
-                variant="headline"
-                gutterBottom
-              >
-                Discover the colleges and universities that are right for you.
-              </Typography>
-              <div className={classnames(classes.collegeSearch)}>
-                <CollegeAutocomplete
-                  value={value}
-                  suggestions={suggestions}
-                  onSuggestionSelected={this.onSuggestionSelected}
-                  getSuggestions={this.props.getSuggestions}
-                  setSuggestions={this.props.setSuggestions}
-                  setValue={this.props.setValue}
-                />
+                <Typography
+                  className={classnames(classes.heading, classes.subheading)}
+                  variant="headline"
+                  gutterBottom
+                >
+                  Discover the colleges and universities that are right for you.
+                </Typography>
+                <div className={classnames(classes.collegeSearch)}>
+                  <CollegeAutocomplete
+                    value={value}
+                    suggestions={suggestions}
+                    onSuggestionSelected={this.onSuggestionSelected}
+                    getSuggestions={this.props.getSuggestions}
+                    setSuggestions={this.props.setSuggestions}
+                    setValue={this.props.setValue}
+                  />
+                </div>
               </div>
             </div>
             <RankingSection />
@@ -172,6 +180,7 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect((mapStateToProps: any), (mapDispatchToProps: any))(
-  withStyles(styles)(HomePage)
-)
+export default connect(
+  (mapStateToProps: any),
+  (mapDispatchToProps: any)
+)(withStyles(styles)(HomePage))

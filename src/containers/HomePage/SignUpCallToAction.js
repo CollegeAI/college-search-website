@@ -6,6 +6,8 @@ import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import Button from '@material-ui/core/Button'
 import classnames from 'classnames'
+import { Link } from 'react-router-dom'
+import * as colors from '@material-ui/core/colors'
 
 // Material ui colors
 import indigo from '@material-ui/core/colors/indigo'
@@ -40,11 +42,16 @@ export class SignUpCallToAction extends React.PureComponent<Props> {
       <div className={classes.root}>
         <Grid container justify="center">
           <Grid item xs={12}>
-            Sign up to learn more about the colleges and universities in your
-            area—it's free!
+            No need to sign up, just start{' '}
+            <Link
+              style={{ textDecoration: 'none', color: colors.blue['500'] }}
+              to="/colleges/search"
+            >
+              searching for colleges
+            </Link>.
           </Grid>
           <Grid item xs={12}>
-            <Button
+            {/* <Button
               variant="contained"
               size="large"
               color="primary"
@@ -59,7 +66,7 @@ export class SignUpCallToAction extends React.PureComponent<Props> {
               className={classes.button}
             >
               Log In
-            </Button>
+            </Button> */}
           </Grid>
         </Grid>
       </div>
