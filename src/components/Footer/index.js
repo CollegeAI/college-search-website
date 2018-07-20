@@ -143,7 +143,7 @@ export class Footer extends React.Component<Props, State> {
                   className={classes.descriptionLabel}
                 >
                   <b>College Search Website</b> | Discover the schools that are
-                  right for you. | Copyright 2018
+                  right for you. | Copyright CollegeAI 2018
                 </Typography>
                 {/* <div className={classes.categoryContainer}>
                   <Grid container>
