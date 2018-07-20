@@ -21,7 +21,7 @@ import { withStyles } from '@material-ui/core/styles'
 // Import Sections
 import CenteredContent from '../../components/CenteredContent'
 import Icons from '../../components/Icons'
-import searchSvg from './assets/search.svg'
+import pattern from '../../homepage_pattern.svg'
 
 type Props = {
   classes: Object
@@ -72,8 +72,8 @@ export class CollegeSearchPageBanner extends React.PureComponent<Props> {
                   top: 0,
                   width: '100%',
                   height: '100%',
-                  backgroundImage: `url(${searchSvg})`,
-                  backgroundRepeat: 'space',
+                  backgroundImage: `url(${pattern})`,
+                  backgroundSize: '300px 150px',
                   opacity: 0.1,
                   zIndex: -1
                 }}

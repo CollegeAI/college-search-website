@@ -65,43 +65,43 @@ const categories = [
   {
     label: 'Application',
     list: [
-      {
-        name: 'Financial Aid',
-        to: '/colleges'
-      },
-      {
-        name: 'Test Prep',
-        to: '/colleges'
-      },
-      {
-        name: 'Athletics',
-        to: '/colleges'
-      },
-      {
-        name: 'Opportunities',
-        to: '/colleges'
-      }
+      // {
+      //   name: 'Financial Aid',
+      //   to: '/colleges'
+      // },
+      // {
+      //   name: 'Test Prep',
+      //   to: '/colleges'
+      // },
+      // {
+      //   name: 'Athletics',
+      //   to: '/colleges'
+      // },
+      // {
+      //   name: 'Opportunities',
+      //   to: '/colleges'
+      // }
     ]
   },
   {
     label: 'Career',
     list: [
-      {
-        name: 'Jobs',
-        to: '/colleges'
-      },
-      {
-        name: 'Interests',
-        to: '/colleges'
-      },
-      {
-        name: 'Value',
-        to: '/colleges'
-      },
-      {
-        name: 'Outlook',
-        to: '/colleges'
-      }
+      // {
+      //   name: 'Jobs',
+      //   to: '/colleges'
+      // },
+      // {
+      //   name: 'Interests',
+      //   to: '/colleges'
+      // },
+      // {
+      //   name: 'Value',
+      //   to: '/colleges'
+      // },
+      // {
+      //   name: 'Outlook',
+      //   to: '/colleges'
+      // }
     ]
   }
 ]
@@ -112,22 +112,9 @@ export class Footer extends React.Component<Props, State> {
     return (
       <div className={classes.footerContainer}>
         <footer className={classes.footer}>
-          {/* Start Divider */}
-          <div className={classes.footerItem}>
-            <Grid container className={classes.dividerContainer}>
-              <Grid item xs={1}>
-                <Divider />
-              </Grid>
-              <Grid item> College Search Website </Grid>
-              <Grid item className={classes.grow}>
-                <Divider />
-              </Grid>
-            </Grid>
-          </div>
-          {/* End Divider */}
           <div className={classes.footerItem}>
             <Grid container>
-              <Grid item md={2}>
+              {/* <Grid item md={2}>
                 <Grid
                   container
                   direction="column"
@@ -148,24 +135,22 @@ export class Footer extends React.Component<Props, State> {
                     <Icons name="twitter" />
                   </Grid>
                 </Grid>
-              </Grid>
-              <Grid item md={10} className={classes.description}>
+              </Grid> */}
+              <Grid item md={12} className={classes.description}>
                 <Typography
                   variant="subheading"
+                  style={{ color: '#888' }}
                   className={classes.descriptionLabel}
                 >
-                  College Search Website | Discover the schools that are right
-                  for you.
+                  <b>College Search Website</b> | Discover the schools that are
+                  right for you. | Copyright 2018
                 </Typography>
-                <div className={classes.categoryContainer}>
+                {/* <div className={classes.categoryContainer}>
                   <Grid container>
                     {categories.map((category, ind) => (
                       <Grid item md={4} key={ind}>
                         <div className={classes.category} key={category.label}>
-                          <Typography
-                            variant="subheading"
-                            className={classes.categoryLabel}
-                          >
+                          <Typography className={classes.categoryLabel}>
                             {category.label}
                           </Typography>
                           <ul className={classes.categoryList}>
@@ -184,7 +169,7 @@ export class Footer extends React.Component<Props, State> {
                       </Grid>
                     ))}
                   </Grid>
-                </div>
+                </div> */}
               </Grid>
             </Grid>
           </div>

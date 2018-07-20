@@ -8,6 +8,7 @@ export default (theme: any) => ({
   footer: {
     display: 'inline-flex',
     justifyContent: 'center',
+    borderTop: '1px solid #ccc',
     padding: `${theme.spacing.unit}px ${theme.spacing.unit * 2}px 0px`,
     maxWidth: theme.breakpoints.values.md,
     flexWrap: 'wrap'
@@ -50,8 +51,9 @@ export default (theme: any) => ({
   },
   categoryLabel: {
     margin: 0,
-    color: '#2e9adf',
-    textDecoration: 'underline'
+    fontWeight: 'bold'
+    // color: '#2e9adf',
+    // textDecoration: 'underline'
   },
   categoryList: {
     listStyleType: 'none',
