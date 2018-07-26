@@ -99,7 +99,6 @@ type Props = {
   onRemoveCollegeFromList: Function
 }
 
-const resourceUrl = 'https://storage.googleapis.com/resource-images/files/'
 export class CollegePageHeader extends React.PureComponent<Props> {
   onToggleAddToList = () => {
     const {
@@ -179,9 +178,7 @@ export class CollegePageHeader extends React.PureComponent<Props> {
         <div>
           <div
             style={{
-              backgroundImage: `url(${resourceUrl}${
-                college.images.campus
-              }-s512.png)`,
+              backgroundImage: college.images.campus,
               backgroundColor: '#114da5',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
