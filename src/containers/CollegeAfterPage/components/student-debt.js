@@ -1,18 +1,18 @@
 // @flow
 
-import React from 'react'
-import Typography from '@material-ui/core/Typography'
-import Grid from '@material-ui/core/Grid'
+import React from "react"
+import Typography from "@material-ui/core/Typography"
+import Grid from "@material-ui/core/Grid"
 
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles } from "@material-ui/core/styles"
 
 // Import Sections
-import InformationCard from '../../../components/InformationCard'
-import GradeLabel from '../../../components/GradeLabel'
-import LargeFact from '../../../components/LargeFact'
-import ListFacts from '../../../components/ListFacts'
-import LoanOptions from '../../../components/LoanOptions'
-import { formatNumber } from '../../../utils'
+import InformationCard from "../../../components/InformationCard"
+import GradeLabel from "../../../components/GradeLabel"
+import LargeFact from "../../../components/LargeFact"
+import ListFacts from "../../../components/ListFacts"
+import LoanOptions from "../../../components/LoanOptions"
+import { formatNumber } from "../../../utils"
 
 type Props = {
   classes: Object,
@@ -34,19 +34,19 @@ export class StudentDebt extends React.PureComponent<Props> {
   render() {
     const { classes, college, onExternalLinkClick } = this.props
     const { aid } = college
-    const cardHeader = 'Student Debt'
+    const cardHeader = "Student Debt"
 
     const avgloanLargeFact = {
-      label: 'Average Loan Amount',
-      primary: aid.loanPrincipal ? `$${formatNumber(aid.loanPrincipal)}` : '--',
-      unit: ' / year',
-      secondary: 'National $6,768'
+      label: "Average Loan Amount",
+      primary: aid.loanPrincipal ? `$${formatNumber(aid.loanPrincipal)}` : "--",
+      unit: " / year",
+      secondary: "National $6,768"
     }
 
     const defaultLoanRateLargeFact = {
-      label: 'Loan Default Rate',
-      primary: '--',
-      secondary: 'National 11%'
+      label: "Loan Default Rate",
+      primary: "--",
+      secondary: "National 11%"
     }
 
     return (
@@ -63,7 +63,7 @@ export class StudentDebt extends React.PureComponent<Props> {
             </div>
           </Grid>
           <Grid item xs={12}>
-            <LoanOptions onExternalLinkClick={onExternalLinkClick} />
+            {/* <LoanOptions onExternalLinkClick={onExternalLinkClick} /> */}
           </Grid>
         </Grid>
       </InformationCard>

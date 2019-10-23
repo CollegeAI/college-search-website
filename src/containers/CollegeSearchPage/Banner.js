@@ -103,7 +103,7 @@ export class CollegeSearchPageBanner extends React.PureComponent<Props> {
                         variant="display1"
                         gutterBottom
                       >
-                        2018 Best Colleges in America
+                        2019 Best Colleges in America
                       </Typography>
                       <div className={classes.descriptionContainer}>
                         <div>

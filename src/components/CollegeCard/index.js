@@ -1,27 +1,27 @@
 // @flow
 
-import React from 'react'
-import { withStyles } from '@material-ui/core/styles'
-import classnames from 'classnames'
-import Typography from '@material-ui/core/Typography'
-import Paper from '@material-ui/core/Paper'
-import Divider from '@material-ui/core/Divider'
-import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
-import Grid from '@material-ui/core/Grid'
+import React from "react"
+import { withStyles } from "@material-ui/core/styles"
+import classnames from "classnames"
+import Typography from "@material-ui/core/Typography"
+import Paper from "@material-ui/core/Paper"
+import Divider from "@material-ui/core/Divider"
+import TextField from "@material-ui/core/TextField"
+import Button from "@material-ui/core/Button"
+import Grid from "@material-ui/core/Grid"
 
-import StarIcon from '@material-ui/icons/Star'
-import StarHalfIcon from '@material-ui/icons/StarHalf'
-import StarBorderIcon from '@material-ui/icons/StarBorder'
+import StarIcon from "@material-ui/icons/Star"
+import StarHalfIcon from "@material-ui/icons/StarHalf"
+import StarBorderIcon from "@material-ui/icons/StarBorder"
 
-import FavoriteIcon from '@material-ui/icons/Favorite'
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
-import { formatNumber } from '../../utils'
+import FavoriteIcon from "@material-ui/icons/Favorite"
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder"
+import { formatNumber } from "../../utils"
 
 // Import Other Components
-import Rating from '../Rating'
-import LetterGrade from '../LetterGrade'
-import styles from './styles'
+import Rating from "../Rating"
+import LetterGrade from "../LetterGrade"
+import styles from "./styles"
 
 type Props = {
   classes?: Object,
@@ -54,17 +54,17 @@ export class CollegeCard extends React.PureComponent<Props> {
       college.rankings[sortOrder.collegeKey] &&
       college.rankings[sortOrder.collegeKey].value
     let description
-    if (sortOrder.collegeKey === 'bestColleges') {
-      description = order ? `#${order} Best Colleges in America` : ''
+    if (sortOrder.collegeKey === "bestColleges") {
+      description = order ? `#${order} Best Colleges in America` : ""
     } else {
-      description = order ? `#${order} ${sortOrder.name} in America` : ''
+      description = order ? `#${order} ${sortOrder.name} in America` : ""
     }
     const acceptanceRate = `${(college.admissions.acceptanceRate * 100).toFixed(
       1
     )}%`
     const netPrice = college.cost.avgNetPrice
       ? `$${formatNumber(college.cost.avgNetPrice)}`
-      : ''
+      : ""
     const { math: satMath, reading: satReading } = college.admissions.sat
     const satRange = `${satMath.percentile25 +
       satReading.percentile25} - ${satMath.percentile75 +
@@ -101,7 +101,7 @@ export class CollegeCard extends React.PureComponent<Props> {
           <div className={classes.quickStats}>
             {value &&
               ((
-                <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+                <span style={{ display: "inline-flex", alignItems: "center" }}>
                   <LetterGrade
                     val={value}
                     style={{
@@ -139,7 +139,12 @@ export class CollegeCard extends React.PureComponent<Props> {
           <Grid container>
             <Grid item xs={9}>
               <div className={classes.getIn}>
-                <a className={classes.willYouGetIn}>Will you get in?</a>
+                <a
+                  className={classes.willYouGetIn}
+                  href={`https://collegeai.com/chanceme/${college.collegeId}`}
+                >
+                  Will you get in?
+                </a>
               </div>
             </Grid>
             <Grid item xs={3}>
@@ -161,7 +166,7 @@ export class CollegeCard extends React.PureComponent<Props> {
                   variant="subheading"
                   style={{ marginLeft: 8 }}
                 >
-                  {isAdded ? 'Added' : 'Add To List'}
+                  {isAdded ? "Added" : "Add To List"}
                 </Typography>
               </div>
             </Grid>

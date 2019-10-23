@@ -1,22 +1,22 @@
 // @flow
 
-import React from 'react'
-import Typography from '@material-ui/core/Typography'
-import Grid from '@material-ui/core/Grid'
-import Paper from '@material-ui/core/Paper'
-import classnames from 'classnames'
+import React from "react"
+import Typography from "@material-ui/core/Typography"
+import Grid from "@material-ui/core/Grid"
+import Paper from "@material-ui/core/Paper"
+import classnames from "classnames"
 
 // Material ui colors
-import green from '@material-ui/core/colors/green'
-import blue from '@material-ui/core/colors/blue'
+import green from "@material-ui/core/colors/green"
+import blue from "@material-ui/core/colors/blue"
 
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles } from "@material-ui/core/styles"
 
 // Import Sections
-import ListFacts from '../../../components/ListFacts'
-import LargeFact from '../../../components/LargeFact'
-import LoanOptions from '../../../components/LoanOptions'
-import { formatNumber, decimalToPercentage } from '../../../utils'
+import ListFacts from "../../../components/ListFacts"
+import LargeFact from "../../../components/LargeFact"
+import LoanOptions from "../../../components/LoanOptions"
+import { formatNumber, decimalToPercentage } from "../../../utils"
 
 type Props = {
   classes: Object,
@@ -25,30 +25,30 @@ type Props = {
 
 const styles = theme => ({
   root: {
-    width: '100%',
+    width: "100%",
     marginBottom: 32,
-    display: 'inline-flex',
-    flexDirection: 'column',
-    padding: '30px 30px 10px',
-    boxSizing: 'border-box'
+    display: "inline-flex",
+    flexDirection: "column",
+    padding: "30px 30px 10px",
+    boxSizing: "border-box"
   },
   title: {
-    textAlign: 'left',
+    textAlign: "left",
     color: blue[500],
     paddingBottom: 30
   },
   acceptanceRate: {
-    textAlign: 'left'
+    textAlign: "left"
   },
   acceptanceRateValue: {
     fontSize: 48,
     marginBottom: 32
   },
   leftFacts: {
-    padding: '0px 15px 40px 0px'
+    padding: "0px 15px 40px 0px"
   },
   rightFacts: {
-    padding: '0px 30px 40px 15px'
+    padding: "0px 30px 40px 15px"
   }
 })
 
@@ -63,15 +63,15 @@ export class Loans extends React.PureComponent<Props> {
     const { classes, college } = this.props
     const { aid } = college
     const studentsTakingOutLoans = {
-      label: 'Students Taking Out Loans',
+      label: "Students Taking Out Loans",
       primary: decimalToPercentage(aid.studentsWithAnyLoan)
     }
 
     const loanAmount = {
-      label: 'Average Loan Amount',
+      label: "Average Loan Amount",
       primary: `$${formatNumber(aid.loanPrincipal)}`,
-      unit: ' / year',
-      secondary: 'National $6,768'
+      unit: " / year",
+      secondary: "National $6,768"
     }
 
     return (
@@ -97,7 +97,7 @@ export class Loans extends React.PureComponent<Props> {
             </div>
           </Grid>
           <Grid item xs={12}>
-            <LoanOptions onExternalLinkClick={this.onExternalLinkClick} />
+            {/* <LoanOptions onExternalLinkClick={this.onExternalLinkClick} /> */}
           </Grid>
         </Grid>
       </Paper>

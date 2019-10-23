@@ -9,15 +9,15 @@ import {
   throttle,
   select,
   race
-} from 'redux-saga/effects'
-import objectPath from 'object-path'
-import { delay } from 'redux-saga'
-import { LOCATION_CHANGE } from 'react-router-redux'
-import { actions, constants } from '../redux'
+} from "redux-saga/effects"
+import objectPath from "object-path"
+import { delay } from "redux-saga"
+import { LOCATION_CHANGE } from "react-router-redux"
+import { actions, constants } from "../redux"
 
-import collegeInfoIds from '../../utils/college-info-ids'
+import collegeInfoIds from "../../utils/college-info-ids"
 
-import { waitUntilCollegeAILoads } from './utils'
+import { waitUntilCollegeAILoads } from "./utils"
 
 export function* getCollege(getCollegeParams: Object): Generator<*, *, *> {
   try {

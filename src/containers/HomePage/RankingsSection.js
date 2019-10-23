@@ -57,7 +57,7 @@ export class RankingSection extends React.PureComponent<Props> {
                 className={classes.title}
                 gutterBottom
               >
-                2018 Rankings
+                2019 Rankings
               </Typography>
               <Typography
                 variant="headline"

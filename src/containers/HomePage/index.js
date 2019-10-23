@@ -1,43 +1,43 @@
 // @flow
 
-import React from 'react'
-import { connect } from 'react-redux'
-import { push } from 'react-router-redux'
-import { Helmet } from 'react-helmet'
-import classnames from 'classnames'
+import React from "react"
+import { connect } from "react-redux"
+import { push } from "react-router-redux"
+import { Helmet } from "react-helmet"
+import classnames from "classnames"
 
-import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
-import Grid from '@material-ui/core/Grid'
-import Paper from '@material-ui/core/Paper'
+import Button from "@material-ui/core/Button"
+import Typography from "@material-ui/core/Typography"
+import Grid from "@material-ui/core/Grid"
+import Paper from "@material-ui/core/Paper"
 
-import IconButton from '@material-ui/core/IconButton'
-import SearchIcon from '@material-ui/icons/Search'
-import CloseIcon from '@material-ui/icons/Close'
+import IconButton from "@material-ui/core/IconButton"
+import SearchIcon from "@material-ui/icons/Search"
+import CloseIcon from "@material-ui/icons/Close"
 
 // Material ui colors
-import indigo from '@material-ui/core/colors/indigo'
-import blue from '@material-ui/core/colors/blue'
-import lightBlue from '@material-ui/core/colors/lightBlue'
-import green from '@material-ui/core/colors/green'
+import indigo from "@material-ui/core/colors/indigo"
+import blue from "@material-ui/core/colors/blue"
+import lightBlue from "@material-ui/core/colors/lightBlue"
+import green from "@material-ui/core/colors/green"
 
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles } from "@material-ui/core/styles"
 
-import CollegeAutocomplete from '../../components/CollegeAutocomplete'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-import logo from '../../components/Logo/logo.svg'
-import homepagePattern from '../../homepage_pattern.svg'
+import CollegeAutocomplete from "../../components/CollegeAutocomplete"
+import Header from "../../components/Header"
+import Footer from "../../components/Footer"
+import logo from "../../components/Logo/logo.svg"
+import homepagePattern from "../../homepage_pattern.svg"
 
-import { actions } from './redux'
-import { actions as apiActions } from '../../api/redux'
+import { actions } from "./redux"
+import { actions as apiActions } from "../../api/redux"
 
 // Import Sections
-import RankingSection from './RankingsSection'
-import WhyUs from './WhyUs'
-import OurTeam from './OurTeam'
-import SignUpCallToAction from './SignUpCallToAction'
-import { push as pushRoute } from 'react-router-redux'
+import RankingSection from "./RankingsSection"
+import WhyUs from "./WhyUs"
+import OurTeam from "./OurTeam"
+import SignUpCallToAction from "./SignUpCallToAction"
+import { push as pushRoute } from "react-router-redux"
 
 type Props = {
   classes: Object
@@ -45,19 +45,19 @@ type Props = {
 
 const styles = theme => ({
   root: {
-    textAlign: 'center',
-    position: 'relative'
+    textAlign: "center",
+    position: "relative"
   },
   homeContainer: {},
   banner: {
-    position: 'relative',
+    position: "relative",
     paddingTop: 160,
     paddingBottom: 320
   },
   rankingContainer: {
-    textAlign: 'center',
+    textAlign: "center",
     backgroundColor: green[300],
-    padding: '36px 18px'
+    padding: "36px 18px"
   },
   heading: {
     // color: '#fff',
@@ -65,15 +65,15 @@ const styles = theme => ({
   },
   subheading: {
     maxWidth: 450,
-    margin: '0px auto 24px',
-    color: '#fff',
+    margin: "0px auto 24px",
+    color: "#fff",
     opacity: 1
   },
   collegeSearch: {
-    border: '1px solid #ccc',
+    border: "1px solid #ccc",
     borderRadius: 4,
     width: 450,
-    margin: '0px auto'
+    margin: "0px auto"
   }
 })
 
@@ -85,7 +85,7 @@ export class HomePage extends React.PureComponent<Props> {
 
   render() {
     const { classes = {}, goToCollegeSearch, autocomplete = {} } = this.props
-    const { value = '', suggestions = [] } = autocomplete
+    const { value = "", suggestions = [] } = autocomplete
     return (
       <div className={classes.root}>
         <Helmet>
@@ -98,26 +98,26 @@ export class HomePage extends React.PureComponent<Props> {
             <div className={classes.banner}>
               <div
                 style={{
-                  position: 'absolute',
+                  position: "absolute",
                   left: 0,
                   top: 0,
                   right: 0,
                   bottom: 0,
-                  width: '100%',
-                  height: '100%',
+                  width: "100%",
+                  height: "100%",
                   backgroundImage: `url(${homepagePattern})`,
-                  backgroundSize: '300px 150px',
+                  backgroundSize: "300px 150px",
                   opacity: 0.1,
                   zIndex: -1
                 }}
               />
               <div
                 style={{
-                  position: 'absolute',
+                  position: "absolute",
                   left: 0,
                   top: 0,
-                  width: '100%',
-                  height: '100%',
+                  width: "100%",
+                  height: "100%",
                   backgroundColor: blue[100],
                   zIndex: -2
                 }}
@@ -125,10 +125,10 @@ export class HomePage extends React.PureComponent<Props> {
               <div
                 style={{
                   backgroundColor: blue[400],
-                  display: 'inline-block',
+                  display: "inline-block",
                   padding: 30,
                   borderRadius: 4,
-                  boxShadow: '0px 2px 8px rgba(0,0,0,0.25)'
+                  boxShadow: "0px 2px 8px rgba(0,0,0,0.25)"
                 }}
               >
                 <Typography
@@ -171,7 +171,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     pushRoute: (route: string) => dispatch(push(route)),
-    goToCollegeSearch: () => dispatch(pushRoute('/colleges/search')),
+    goToCollegeSearch: () => dispatch(pushRoute("/colleges/search")),
     getSuggestions: searchValue =>
       dispatch(actions.getAutocompleteSuggestions(searchValue)),
     setSuggestions: suggestions =>

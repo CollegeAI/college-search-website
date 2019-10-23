@@ -1,23 +1,23 @@
 // @flow
 
-import React from 'react'
-import Typography from '@material-ui/core/Typography'
-import Grid from '@material-ui/core/Grid'
-import Paper from '@material-ui/core/Paper'
-import classnames from 'classnames'
+import React from "react"
+import Typography from "@material-ui/core/Typography"
+import Grid from "@material-ui/core/Grid"
+import Paper from "@material-ui/core/Paper"
+import classnames from "classnames"
 
 // Material ui colors
-import green from '@material-ui/core/colors/green'
-import blue from '@material-ui/core/colors/blue'
+import green from "@material-ui/core/colors/green"
+import blue from "@material-ui/core/colors/blue"
 
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles } from "@material-ui/core/styles"
 
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
 
 // Import Sections
-import CollegeItem from '../../../components/CollegeItem'
-import ListFacts from '../../../components/ListFacts'
-import FactFooter from './FactFooter'
+import CollegeItem from "../../../components/CollegeItem"
+import ListFacts from "../../../components/ListFacts"
+import FactFooter from "./FactFooter"
 
 type Props = {
   classes: Object,
@@ -30,107 +30,107 @@ type State = {
 
 const styles = theme => ({
   root: {
-    width: '100%',
+    width: "100%",
     marginBottom: 32,
-    display: 'inline-flex',
-    flexDirection: 'column'
+    display: "inline-flex",
+    flexDirection: "column"
   },
   cardContent: {
-    padding: '30px 30px 10px'
+    padding: "30px 30px 10px"
   },
   title: {
-    textAlign: 'left',
+    textAlign: "left",
     color: blue[500],
     paddingBottom: 30
   },
   acceptanceRate: {
-    textAlign: 'left'
+    textAlign: "left"
   },
   acceptanceRateValue: {
     fontSize: 48,
     marginBottom: 32
   },
   leftFacts: {
-    padding: '0px 15px 40px 0px'
+    padding: "0px 15px 40px 0px"
   },
   rightFacts: {
-    padding: '0px 30px 40px 15px'
+    padding: "0px 30px 40px 15px"
   },
   admissionFactContainer: {
-    display: 'inline-flex',
-    justifyContent: 'space-between',
-    width: '100%',
-    borderBottom: '1px solid #dddddd',
-    padding: '10px 0px'
+    display: "inline-flex",
+    justifyContent: "space-between",
+    width: "100%",
+    borderBottom: "1px solid #dddddd",
+    padding: "10px 0px"
   },
   admissionFactLabel: {},
   admissionFactValue: {
     fontWeight: 700
   },
   applicationWebsiteContainer: {
-    display: 'inline-flex',
-    justifyContent: 'space-between',
-    width: '100%',
-    borderTop: '1px solid #dddddd',
-    padding: '10px 0px',
-    textAlign: 'left'
+    display: "inline-flex",
+    justifyContent: "space-between",
+    width: "100%",
+    borderTop: "1px solid #dddddd",
+    padding: "10px 0px",
+    textAlign: "left"
   },
   applicationWebsite: {
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
     paddingLeft: 16,
     fontWeight: 700,
     color: blue[400]
   },
   studentApplied: {
-    color: '#464646',
+    color: "#464646",
     fontWeight: 700
   },
   similarCollegeItem: {
-    borderTop: '1px solid #dddddd',
-    display: 'inline-flex',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    textAlign: 'left',
-    width: '100%'
+    borderTop: "1px solid #dddddd",
+    display: "inline-flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    textAlign: "left",
+    width: "100%"
   },
   showMoreColleges: {
-    padding: '10px 0px',
-    borderTop: '1px solid #dddddd',
-    borderBottom: '1px solid #dddddd',
-    textAlign: 'left',
-    width: '100%'
+    padding: "10px 0px",
+    borderTop: "1px solid #dddddd",
+    borderBottom: "1px solid #dddddd",
+    textAlign: "left",
+    width: "100%"
   },
   showMoreCollegesButton: {
-    display: 'inline-flex',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    textAlign: 'left',
+    display: "inline-flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    textAlign: "left",
     color: blue[400],
-    cursor: 'pointer'
+    cursor: "pointer"
   },
   similarCollegesContainer: {
     height: 159,
-    overflowY: 'hidden',
+    overflowY: "hidden",
     transition: `height ${theme.transitions.duration.shortest}ms`
   },
   similarCollegesContainerExpanded: {
     height: 422
   },
   expand: {
-    transform: 'rotate(0deg)',
-    transition: theme.transitions.create('transform', {
+    transform: "rotate(0deg)",
+    transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shorter
     })
   },
   expandOpen: {
-    transform: 'rotate(180deg)'
+    transform: "rotate(180deg)"
   },
   improveTestPrep: {
     color: blue[400],
     fontWeight: 700,
-    cursor: 'pointer'
+    cursor: "pointer"
   }
 })
 
@@ -147,20 +147,20 @@ export class Admissions extends React.Component<Props, State> {
   }
 
   onImproveTestPrepClick = () => {
-    const testPrepUrl = 'https://sat.magoosh.com/'
-    const win = window.open(testPrepUrl, '_blank')
+    const testPrepUrl = "https://sat.magoosh.com/"
+    const win = window.open(testPrepUrl, "_blank")
     win.focus()
   }
 
   render() {
     const { classes, college, onPushRoute, pushRoute } = this.props
 
-    const footerLabel = 'Read More About Admissions'
+    const footerLabel = "Read More About Admissions"
     const name = college.name
     const acceptanceRate = `${(college.admissions.acceptanceRate * 100).toFixed(
       1
     )}%`
-    const applicationDeadline = '--'
+    const applicationDeadline = "--"
     const applicationWebsite = college.links.applicationSite
 
     const { sat, act } = college.admissions
@@ -177,11 +177,11 @@ export class Admissions extends React.Component<Props, State> {
       },
       {
         label: `Application Fee`,
-        value: '--'
+        value: "--"
       },
       {
         label: `SAT/ACT`,
-        value: '--'
+        value: "--"
       },
       {
         label: `High School GPA`,
@@ -191,7 +191,7 @@ export class Admissions extends React.Component<Props, State> {
       },
       {
         label: `Early Decision/Early Action`,
-        value: '--'
+        value: "--"
       }
     ]
 
@@ -228,12 +228,12 @@ export class Admissions extends React.Component<Props, State> {
                   <ListFacts items={addmissionsFacts} />
                   <div className={classes.admissionFactContainer}>
                     <div className={classes.admissionFactLabel}>
-                      <a
+                      {/* <a
                         className={classes.improveTestPrep}
                         onClick={this.onImproveTestPrepClick}
                       >
                         Improve Your SAT/ACT Scores with Test Prep
-                      </a>
+                      </a> */}
                     </div>
                   </div>
                 </div>
@@ -290,7 +290,7 @@ export class Admissions extends React.Component<Props, State> {
                       onClick={this.handleExpandClick}
                     >
                       <div className={classes.showMoreCollegesButton}>
-                        {this.state.expanded ? 'Hide' : 'More'}
+                        {this.state.expanded ? "Hide" : "More"}
                         <ExpandMoreIcon
                           className={classnames(classes.expand, {
                             [classes.expandOpen]: this.state.expanded

@@ -1,8 +1,9 @@
 {
-  "name": "sample-site",
+  "name": "college-search-website",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001",
+  "homepage": "https://collegesearchwebsite.com",
   "dependencies": {
     "@material-ui/core": "^1.2.0",
     "@material-ui/icons": "^1.1.0",
@@ -32,6 +33,7 @@
     "flow": "flow"
   },
   "devDependencies": {
-    "flow-bin": "^0.74.0"
+    "flow-bin": "^0.74.0",
+    "gh-pages": "^2.0.1"
   }
 }

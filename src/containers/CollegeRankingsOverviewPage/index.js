@@ -325,7 +325,7 @@ export class CollegeRankingsOverviewPage extends React.PureComponent<Props> {
                   variant="display2"
                   gutterBottom
                 >
-                  2018 College Rankings
+                  2019 College Rankings
                 </Typography>
               </div>
             </div>
